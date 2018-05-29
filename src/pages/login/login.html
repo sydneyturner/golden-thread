@@ -1,0 +1,35 @@
+<style>
+    ion-title {
+        background-color: #66cdaa;
+    }
+
+    .button {
+        width: 100%;
+        max-width: 100%;
+        background-color: #ffe497;
+        color: black;
+    }
+</style>
+
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            Login Page
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-list>
+            <ion-item>
+                    <ion-input type="text" placeholder="Username"></ion-input>
+                  </ion-item>
+
+                  <ion-item>
+                        <ion-input type="password" placeholder="Password"></ion-input>
+                      </ion-item>
+
+    </ion-list>
+
+    <button ion-button (click)="navigateToProfile()" class="button">Login</button>
+</ion-content>

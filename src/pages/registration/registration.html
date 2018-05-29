@@ -1,0 +1,45 @@
+<style>
+    ion-title {
+        background-color: #66cdaa;
+    }
+
+    .button {
+        width: 100%;
+        max-width: 100%;
+        background-color: #ffe497;
+        color: black;
+    }
+</style>
+
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            Register
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-list>
+        <ion-item>
+            <ion-input type="text" placeholder="Full Name"></ion-input>
+        </ion-item>
+
+
+        <ion-item>
+            <ion-input type="text" placeholder="Email"></ion-input>
+        </ion-item>
+
+
+        <ion-item>
+            <ion-input type="text" placeholder="Enter a username"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-input type="password" placeholder="Enter a password"></ion-input>
+        </ion-item>
+
+    </ion-list>
+
+    <button ion-button (click)="navigateToProfile()" class="button">Register</button>
+</ion-content>
