@@ -1,6 +1,8 @@
-page-profile {
+page-login {
     ion-title {
         background-color: #66cdaa;
+        // color:white;
+        // text-align: center;
     }
 
     .button {
@@ -8,16 +10,5 @@ page-profile {
         max-width: 100%;
         background-color: #ffe497;
         color: black;
-    }
-
-    ion-icon {
-        font-size: 5em;
-        padding-left: 43%;
-
-    }
-
-    p {
-        padding-top: 10px;
-        text-align: center;
     }
 }

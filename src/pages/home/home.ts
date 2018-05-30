@@ -10,8 +10,9 @@ import { RegistrationPage } from '../registration/registration';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
 
+  constructor(public navCtrl: NavController) {
+    
   }
 
   navigateToLogin() {

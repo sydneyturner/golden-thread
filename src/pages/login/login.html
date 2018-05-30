@@ -1,4 +1,4 @@
-<style>
+<!-- <style>
     ion-title {
         background-color: #66cdaa;
     }
@@ -9,27 +9,25 @@
         background-color: #ffe497;
         color: black;
     }
-</style>
+</style> -->
 
 <ion-header>
-    <ion-navbar>
-        <ion-title>
-            Login Page
-        </ion-title>
+    <ion-navbar class="head">
+        <ion-title>Login</ion-title>
     </ion-navbar>
 </ion-header>
 
 <ion-content padding>
     <ion-list>
-            <ion-item>
-                    <ion-input type="text" placeholder="Username"></ion-input>
-                  </ion-item>
+        <ion-item>
+            <ion-input placeholder="Username" [(ngModel)]="username"></ion-input>
+        </ion-item>
 
-                  <ion-item>
-                        <ion-input type="password" placeholder="Password"></ion-input>
-                      </ion-item>
+        <ion-item>
+            <ion-input type="password" placeholder="Password" [(ngModel)]="password"></ion-input>
+        </ion-item>
 
     </ion-list>
 
-    <button ion-button (click)="navigateToProfile()" class="button">Login</button>
+    <button ion-button (click)="login()" class="button">Login</button>
 </ion-content>
