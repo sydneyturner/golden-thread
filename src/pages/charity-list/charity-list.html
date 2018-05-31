@@ -6,7 +6,7 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="main">
     <ion-title>Charities</ion-title>
   </ion-navbar>
 
@@ -14,7 +14,7 @@
 
 
 <ion-content padding>
-    <ion-list inset>
+    <ion-list>
         <button ion-item *ngFor="let charity of charities" (click)="toDetailPage(charity)">{{charity.name}}</button>
 
     </ion-list>

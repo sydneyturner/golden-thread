@@ -1,10 +1,18 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { CharityListPage } from '../charity-list/charity-list';
+import { PortfolioPage  } from "../portfolio/portfolio";
+/**
+ * Generated class for the ProfilePage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
 
+// @IonicPage()
 @Component({
   selector: 'page-profile',
-  templateUrl: 'profile.html'
+  templateUrl: 'profile.html',
 })
 export class ProfilePage {
 
@@ -24,7 +32,12 @@ export class ProfilePage {
     this.navCtrl.popToRoot();
   }
 
-  navigateToCharity(){
+  navigateToCharity() {
     this.navCtrl.push(CharityListPage);
-}
+  }
+
+  navigateToPortfolio() {
+    this.navCtrl.push(PortfolioPage);
+  }
+
 }

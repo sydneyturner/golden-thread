@@ -6,7 +6,7 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="main">
     <ion-title>{{charity.name}}</ion-title>
   </ion-navbar>
 
@@ -16,4 +16,6 @@
 <ion-content padding>
   <p><strong>Description:</strong> {{charity.description}}</p>
   <p><strong>Goal:</strong> {{charity.goal}}</p>
+
+  <button ion-button (click)="navigateToPaymentModal()" class="button">Donate Now</button>
 </ion-content>
