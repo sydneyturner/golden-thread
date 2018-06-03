@@ -13,11 +13,39 @@
 </ion-header>
 
 
-<ion-content padding>
-    <ion-list>
+<ion-content padding class="cards-bg">
+  <!-- <ion-list>
         <button ion-item *ngFor="let charity of charities" (click)="toDetailPage(charity)">{{charity.name}}</button>
 
-    </ion-list>
+    </ion-list> -->
+  <ion-card *ngFor="let charity of charities">
+    
+    <!-- IMAGE -->
+    <img src={charity.image}}>
 
+    <ion-card-content>
+      <ion-card-title>
+        {{charity.name}}
+      </ion-card-title>
 
+      <p>{{charity.preview}}</p>
+    </ion-card-content>
+
+    <ion-row no-padding>
+
+      <ion-col>
+        <button ion-button clear icon-start (click)="toDetailPage(charity)">
+          <!-- <ion-icon name='information-circle'></ion-icon> -->
+          Details
+        </button>
+      </ion-col>
+
+      <!-- <ion-col>
+        <button ion-button clear small color="primary" icon-start>
+          <ion-icon name='plus'></ion-icon>
+          Add
+        </button>
+      </ion-col> -->
+    </ion-row>
+  </ion-card>
 </ion-content>

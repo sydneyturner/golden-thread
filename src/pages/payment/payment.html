@@ -23,7 +23,8 @@
   <ion-list>
     <ion-list-header>Donation Amount</ion-list-header>
     <ion-item>
-        <ion-input type="number" placeholder="$$"></ion-input>
+      <ion-label>$</ion-label>  
+      <ion-input type="number"></ion-input>
     </ion-item>
   </ion-list>
 
@@ -34,15 +35,15 @@
     </ion-list-header>
     <ion-item>
       <ion-label>One-Time</ion-label>
-      <ion-radio value="one-time" checked></ion-radio>
+      <ion-radio value="One-time" checked></ion-radio>
     </ion-item>
     <ion-item>
       <ion-label>Monthly</ion-label>
-      <ion-radio value="monthly"></ion-radio>
+      <ion-radio value="Monthly"></ion-radio>
     </ion-item>
     <ion-item>
       <ion-label>Yearly</ion-label>
-      <ion-radio value="yearly"></ion-radio>
+      <ion-radio value="Yearly"></ion-radio>
     </ion-item>
 
   </ion-list>
@@ -65,7 +66,7 @@
 
     <ion-item>
       <ion-label stacked>Expiration Date</ion-label>
-      <ion-input type="number" placeholder="MMYY"></ion-input>
+      <ion-input type="number" placeholder="MM/YY"></ion-input>
     </ion-item>
 
     <ion-item>
@@ -75,5 +76,5 @@
   </ion-list>
 
   <!-- Pay Button -->
-  <button ion-button class="button">Donate</button>
+  <button ion-button class="button" (click)="confirmDonate(charity)">Donate</button>
 </ion-content>

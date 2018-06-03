@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Chart } from 'chart.js';
+import { FavoritesPage } from '../favorites/favorites';
 /**
  * Generated class for the PortfolioPage page.
  *
@@ -51,5 +52,9 @@ export class PortfolioPage {
 
     });
   }
+
+  // faves() {
+  //   this.navCtrl.push(FavoritesPage);
+  // }
 
 }

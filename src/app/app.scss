@@ -21,10 +21,16 @@
 
 .toolbar-title-md {
     color: white;
-    // text-align: center;
+    text-align: center;
 }
 
-ion-header ion-icon.back-button-icon.icon {
-    color: white;
-}
+// ion-header ion-icon.back-button-icon.icon {
+//     color: white;
+// }
 
+.button {
+    width: 100%;
+    max-width: 100%;
+    background-color: #ffe497;
+    color: black;
+}

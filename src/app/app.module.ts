@@ -13,6 +13,9 @@ import { CharityListPage } from '../pages/charity-list/charity-list';
 import { DetailPage } from '../pages/detail/detail';
 import { PaymentPage } from '../pages/payment/payment';
 import { PortfolioPage } from '../pages/portfolio/portfolio';
+import { TabsPage } from '../pages/tabs/tabs';
+import { FavoritesPage } from '../pages/favorites/favorites';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +27,9 @@ import { PortfolioPage } from '../pages/portfolio/portfolio';
     CharityListPage,
     DetailPage,
     PaymentPage,
-    PortfolioPage
+    PortfolioPage,
+    TabsPage,
+    FavoritesPage
   ],
   imports: [
     BrowserModule,
@@ -40,7 +45,9 @@ import { PortfolioPage } from '../pages/portfolio/portfolio';
     CharityListPage,
     DetailPage,
     PaymentPage,
-    PortfolioPage
+    PortfolioPage,
+    TabsPage,
+    FavoritesPage
   ],
   providers: [
     StatusBar,

@@ -10,9 +10,12 @@ import { RegistrationPage } from '../registration/registration';
 })
 export class HomePage {
 
+  // create new user
 
   constructor(public navCtrl: NavController) {
-    
+    // this.navCtrl.setRoot()
+
+    // Home --> Login --> Tabs (root) 
   }
 
   navigateToLogin() {

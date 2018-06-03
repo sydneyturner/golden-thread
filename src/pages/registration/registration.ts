@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { ProfilePage } from '../profile/profile';
+import { TabsPage } from '../tabs/tabs';
 
 @Component({
   selector: 'page-registration',
@@ -15,7 +16,7 @@ export class RegistrationPage {
   }
 
   register() {
-    this.navCtrl.push(ProfilePage, {
+    this.navCtrl.setRoot(TabsPage, {
       username: this.username,
       password: this.password
     });

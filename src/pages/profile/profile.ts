@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, App } from 'ionic-angular';
 import { CharityListPage } from '../charity-list/charity-list';
 import { PortfolioPage  } from "../portfolio/portfolio";
+import { HomePage } from '../home/home';
 /**
  * Generated class for the ProfilePage page.
  *
@@ -19,7 +20,7 @@ export class ProfilePage {
   public username: string;
   public password: string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private app: App) {
 
   }
 
@@ -28,8 +29,10 @@ export class ProfilePage {
     this.password = this.navParams.get("password");
   }
 
+  // logout
   navigateToHome() {
     this.navCtrl.popToRoot();
+    this.app.getRootNav().setRoot(HomePage);
   }
 
   navigateToCharity() {
