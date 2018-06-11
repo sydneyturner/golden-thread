@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ViewController, AlertController, Events, ToastController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController, AlertController, Events, ToastController, LoadingController } from 'ionic-angular';
 import { Charity } from '../../models/charity';
 import { DetailPage } from '../detail/detail';
 import { CharityListPage } from '../charity-list/charity-list';
-import { Cleave } from 'cleave.js';
+import { CharityDonation } from '../../models/charity-donation';
+import { User } from '../../models/user';
+// import { Cleave } from 'cleave.js';
 
 /**
  * Generated class for the PaymentPage page.
@@ -19,35 +21,37 @@ import { Cleave } from 'cleave.js';
 })
 export class PaymentPage {
 
-  public charity: Charity;
-
-  // public num: string;
+  public charity: Charity = new Charity();
+  public charityDonation: CharityDonation;
+  public user: User;
+  public amount: number;
   // var donatedChar = new Charity();
-  public name: string;
-
-  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController, public alertCtrl: AlertController, public events: Events, private toastCtrl: ToastController) {
-
-
+  // public name: any;
+  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController,
+    public alertCtrl: AlertController, public events: Events, private toastCtrl: ToastController,
+    public loadingCtrl: LoadingController) {
+      var newDonation = new CharityDonation();
+      newDonation.amount += this.amount;
+      this.charity = this.navParams.get('charity');
+      // newDonation.charityID = this.charity.id;
+      // newDonation.userID = this.user.id;
   }
 
   ionViewDidLoad() {
     console.log('ionViewDownload PaymentPage');
-    this.name = this.navParams.get("charity.name");
+    // this.name = this.navParams.get("charity");
     // this.charity.goal = this.navParams.get("charity.name");
   }
 
   dismiss() {
-    // this.navCtrl.pop();
     let data = { 'foo': 'bar' };
     this.viewCtrl.dismiss(data);
   }
 
-
-
-  confirmDonate(charity: Charity) {
+  confirmDonate() {
     const confirm = this.alertCtrl.create({
       title: 'Donation Confirmation',
-      message: 'Are you sure you want to donate to _______?',
+      message: 'Are you sure you want to donate $' + this.amount + '?',
       // want to add charity info to the alert
       // add amount donated
       buttons: [
@@ -61,8 +65,36 @@ export class PaymentPage {
           text: 'Confirm',
           handler: () => {
             console.log('Confirm clicked');
-            // this.events.publish('donation confirmed', name);
-            // // pass in amount donated and charity name
+
+            let loading = this.loadingCtrl.create({
+              spinner: 'dots',
+              content: 'Sending donation...',
+              duration: 3000
+            });
+          
+            loading.onDidDismiss(() => {
+              console.log('Dismissed loading');
+              let toast = this.toastCtrl.create({
+                message: 'You\'re doantion has been sent.',
+                duration: 3000,
+                position: 'middle'
+              });
+  
+              toast.onDidDismiss(() => {
+                console.log('Dismissed toast');
+                this.navCtrl.push(DetailPage, {
+                  charity: this.charity,
+                });
+                
+              });
+  
+              toast.present();
+              
+            });
+          
+            loading.present();
+            
+
           }
         },
       ]
@@ -72,30 +104,9 @@ export class PaymentPage {
   }
 
 
-  // confirmation() {
-  //   this.events.subscribe('donation confirmed', (name) => {
-  //     console.log('donation sent to', name);
-  //   });
-  //   let toast = this.toastCtrl.create({
-  //     message: 'You\'re doantion has been sent.',
-  //     duration: 3000,
-  //     position: 'middle'
-  //   });
 
-  //   toast.onDidDismiss(() => {
-  //     console.log('Dismissed toast');
-  //   });
 
-  //   toast.present();
-  // }
 
-  // // Card Info
-  // cardNumber() {
-  //   new Cleave('.my-input', {
-  //     creditCard: true
-  // });
-
-  // }
 }
 
 

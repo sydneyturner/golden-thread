@@ -24,7 +24,7 @@
     <ion-list-header>Donation Amount</ion-list-header>
     <ion-item>
       <ion-label>$</ion-label>  
-      <ion-input type="number"></ion-input>
+      <ion-input [(ngModel)]="amount" type="number"></ion-input>
     </ion-item>
   </ion-list>
 
@@ -35,15 +35,15 @@
     </ion-list-header>
     <ion-item>
       <ion-label>One-Time</ion-label>
-      <ion-radio value="One-time" checked></ion-radio>
+      <ion-radio value="one-time" checked></ion-radio>
     </ion-item>
     <ion-item>
       <ion-label>Monthly</ion-label>
-      <ion-radio value="Monthly"></ion-radio>
+      <ion-radio value="monthly"></ion-radio>
     </ion-item>
     <ion-item>
       <ion-label>Yearly</ion-label>
-      <ion-radio value="Yearly"></ion-radio>
+      <ion-radio value="yearly"></ion-radio>
     </ion-item>
 
   </ion-list>
@@ -76,5 +76,5 @@
   </ion-list>
 
   <!-- Pay Button -->
-  <button ion-button class="button" (click)="confirmDonate(charity)">Donate</button>
+  <button ion-button class="button" (click)="confirmDonate()">Donate</button>
 </ion-content>

@@ -2,6 +2,11 @@ import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Chart } from 'chart.js';
 import { FavoritesPage } from '../favorites/favorites';
+import { Charity } from '../../models/charity';
+import { DetailPage } from '../detail/detail';
+import { CharityListPage } from '../charity-list/charity-list';
+import { CharityDonation } from '../../models/charity-donation';
+import { User } from '../../models/user';
 /**
  * Generated class for the PortfolioPage page.
  *

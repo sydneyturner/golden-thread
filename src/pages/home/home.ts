@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { LoginPage } from '../login/login';
 import { RegistrationPage } from '../registration/registration';
-
+import { IntegrationPage } from '../integration/integration';
 
 @Component({
   selector: 'page-home',
@@ -26,5 +26,8 @@ export class HomePage {
     this.navCtrl.push(RegistrationPage);
   }
   
+  navigateToIntegration() {
+    this.navCtrl.push(IntegrationPage);
+  }
 
 }

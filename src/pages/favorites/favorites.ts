@@ -15,8 +15,9 @@ import { User } from '../../models/user';
   templateUrl: 'favorites.html',
 })
 export class FavoritesPage {
-  public charity: Charity;
-  public user: User;
+
+  public charity: Charity = new Charity();
+  public user: User = new User();
   
   constructor(public navCtrl: NavController, public navParams: NavParams, public events: Events) {
     this.charity = this.navParams.get("charity");

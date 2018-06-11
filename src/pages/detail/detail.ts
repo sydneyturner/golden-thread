@@ -18,7 +18,7 @@ import { FavoritesPage } from '../favorites/favorites';
 export class DetailPage {
 
 
-  public charity: Charity;
+  public charity: Charity = new Charity();
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController, private toastCtrl: ToastController, public events: Events) {
     this.charity = this.navParams.get("charity");
@@ -29,15 +29,16 @@ export class DetailPage {
 
   }
 
-  navigateToPaymentModal(charity: Charity){
-    let modal = this.modalCtrl.create(PaymentPage);
+  navigateToPaymentModal(){
+    let modal = this.modalCtrl.create(PaymentPage, { charity: this.charity });
     modal.present();
     this.navCtrl.push(PaymentPage, {
-      charity: charity
+      charity: this.charity,
     });
   }
 
-  presentToast(charity: Charity) {
+  presentToast() {
+    let charity: Charity = this.charity;
     let toast = this.toastCtrl.create({
       message: 'Added to Favorites',
       duration: 2000,

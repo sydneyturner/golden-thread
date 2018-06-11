@@ -33,10 +33,9 @@ export class CharityListPage {
           Hospitals work together to put the smile back onto children’s faces \
           with corrective facial reconstructive surgery and treatments.";
     charity1.goal = "R100,000.00";
-    charity1.image = "assets/img/smileFoundation.png";
+    charity1.image = "/assets/imgs/smlieFoundation.png";
     charity1.preview = "Smile Foundation is a South African non-governmental \
-        organisation with a comprehensive health care vision for children living \
-        with facial conditions...";
+        organisation...";
 
     var charity2 = new Charity();
     charity2.id = 2;
@@ -46,7 +45,7 @@ export class CharityListPage {
           disadvantaged children. Founders Bob Skinstad and Ron Rutland hope to \
           restore dignity to said children and their schools.";
     charity2.goal = "R40,000.00";
-    charity2.image = "assets/img/otherCharity.png";
+    charity2.image = "/assets/imgs/otherCharity.png";
 
     var charity3 = new Charity();
     charity3.id = 3;
@@ -57,7 +56,7 @@ export class CharityListPage {
       such as Early Childhood Care and Development, Health and Nutrition, Education, \
       Child Protection, and Children Rights Governance.";
     charity3.goal = "R50,000.000";
-    charity3.image = "assets/img/saveTheChildren.png";
+    charity3.image = "/assets/imgs/saveTheChildren.png";
 
     // push into array
     this.charities.push(charity1);

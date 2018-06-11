@@ -8,7 +8,7 @@
 
   <ion-navbar color="main">
     <ion-buttons end>
-      <button ion-button icon-only (click)="presentToast(charity)">
+      <button ion-button icon-only (click)="presentToast()">
         <ion-icon name='add'></ion-icon>
       </button>
     </ion-buttons>
@@ -25,5 +25,5 @@
   <p>
     <strong>Goal:</strong> {{charity.goal}}</p>
 
-  <button ion-button (click)="navigateToPaymentModal(charity)" class="button">Donate Now</button>
+  <button ion-button (click)="navigateToPaymentModal()" class="button">Donate Now</button>
 </ion-content>
